@@ -5,6 +5,11 @@ package templateMethod;
  */
 public class StudentATakeExam extends ExaminationTemplate{
     @Override
+    protected boolean isSubmitAheadOfDeadline() {
+        return false;
+    }
+
+    @Override
     protected void answerQuestions() {
         System.out.println("studentA-小明同学先做大题再做选择题");
     }
