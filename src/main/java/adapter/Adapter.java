@@ -29,12 +29,10 @@ public class Adapter implements Target {
         this.adaptee = adaptee;
     }
 
-    @Override
     public void method1() {
         adaptee.method1();
     }
 
-    @Override
     public void method2() {
         System.out.println(this.getClass().getName() + "------" +
                 Thread.currentThread().getStackTrace()[1].getMethodName());
