@@ -21,7 +21,7 @@ public class Singleton3 {
      *
      *      那么假如现在有两个线程T1,T2 分别调用了getInstance 方法， 若T1执行到了instance=new Singleton3()的操作③时，
      *      如果这时T2线程开始调用并执行到了 外层的 “null == instance” 的判断上了, 那么由于T1线程的操作③将一个未初始化的Singleton3
-     *      赋给了instance ,因此这时T2 就会判断instance 已经是初始化的非null对象了,然后实际上 instance 虽然非null, 但是它也违背初始化
+     *      赋给了instance ,因此这时T2 就会判断instance 已经是初始化的非null对象了,然后实际上 instance 虽然非null, 但是它也未被初始化
      *      这时,T2 线程在调用getInstance 后得到的Singleton3 的实例在调用任何方法时都会报错;
      *
      *      以上是 Singleton3 的instance 共享变量在不使用volatile 修饰时会遇到的问题，
